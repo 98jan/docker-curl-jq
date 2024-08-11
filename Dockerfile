@@ -1,3 +1,8 @@
 FROM alpine:3.20.2
 
-RUN apk --no-cache add curl=8.9.1 jq=1.7.1
+# renovate: datasource=repology depName=curl
+ENV CURL_VERSION=8.9.0
+# renovate: datasource=repology depName=jq
+ENV JQ_VERSION=1.7.1
+
+RUN apk --no-cache add curl=${CURL_VERSION} jq=${JQ_VERSION}
